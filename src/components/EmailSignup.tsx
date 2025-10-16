@@ -27,7 +27,7 @@ const EmailSignup = () => {
 
   return (
     <div className="max-w-md mx-auto fade-in-delay">
-      <p className="text-sm text-muted-foreground mb-4 text-center font-light tracking-wide">
+      <p className="text-sm text-primary-foreground/90 mb-4 text-center font-light tracking-wide">
         Join the first sip — exclusive launch offers.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
