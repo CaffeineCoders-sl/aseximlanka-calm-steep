@@ -45,9 +45,9 @@ const FloatingLeaves = () => {
             style={{
               width: leaf.size,
               height: leaf.size,
-              color: "#d4af37",
+              color: "#22c55e",
               opacity: leaf.opacity,
-              filter: "drop-shadow(0 0 2px rgba(212, 175, 55, 0.3))",
+              filter: "drop-shadow(0 0 2px rgba(34, 197, 94, 0.3))",
             }}
             className="transform -rotate-45"
           />
