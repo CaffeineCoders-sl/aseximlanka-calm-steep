@@ -1,11 +1,12 @@
 import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -47,13 +48,18 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-serif text-amber-400 mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["Home", "About", "Products", "Contact"].map((item) => (
-                <li key={item}>
+              {[
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+                { name: "Products", path: "/products" },
+                { name: "Contact", path: "/contact" },
+              ].map((item) => (
+                <li key={item.path}>
                   <button
-                    onClick={() => scrollToSection(item.toLowerCase())}
+                    onClick={() => handleNavigate(item.path)}
                     className="text-white/70 hover:text-amber-400 transition-colors text-sm"
                   >
-                    {item}
+                    {item.name}
                   </button>
                 </li>
               ))}
