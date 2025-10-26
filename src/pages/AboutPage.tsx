@@ -2,7 +2,7 @@ import { Award, Users, Globe, TrendingUp, Target, Heart, Sparkles, Building } fr
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import FloatingLeaves from "@/components/FloatingLeaves";
+// FloatingLeaves component removed — decorative leaves have been removed per request
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,7 +64,6 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <FloatingLeaves />
       {/* Hero Section */}
       <section className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-amber-950">
         <div className="absolute inset-0 opacity-20">
@@ -174,6 +173,60 @@ const AboutPage = () => {
                 <strong className="text-gray-900">blue-chip clients</strong> and{" "}
                 <strong className="text-gray-900">multinational companies</strong> worldwide.
               </p>
+
+              {/* Inserted: The Story of Ceylon Tea narrative from user */}
+              <div className="mt-6">
+                <h3 className="text-2xl font-serif text-gray-900 mb-3">The Story of Ceylon Tea</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  The story of Ceylon Tea begins in the misty mountains of Sri Lanka — once called Ceylon. In the mid-19th
+                  century, British planters searching for fortune discovered that the island’s highlands were more than scenic —
+                  they were perfectly suited for tea.
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-4">
+                  After a devastating coffee blight in the 1860s, a Scottish planter named James Taylor planted the first
+                  commercial tea estate in Loolecondera, Kandy, in 1867. His small experiment soon transformed Sri Lanka into
+                  one of the world’s greatest tea producers. What began as a few acres of tender green bushes became a thriving
+                  industry that shaped the island’s culture, economy, and global reputation.
+                </p>
+
+                <h4 className="text-xl font-serif text-gray-900 mt-6">A Landscape Made for Tea</h4>
+                <p className="text-gray-700 leading-relaxed mt-2">
+                  Sri Lanka’s unique geography and climate give Ceylon Tea its remarkable diversity. From the crisp, citrusy
+                  teas of Nuwara Eliya to the full-bodied richness of Uva, the bright briskness of Dimbula, and the deep aroma
+                  of Kandy — every region tells its own story through the cup. Cool mountain air, rich red soil, and monsoon rains
+                  nurture the leaves, while centuries of craftsmanship ensure that every plucked bud carries the soul of the island’s hills.
+                </p>
+
+                <hr className="my-6" />
+
+                <h4 className="text-xl font-serif text-gray-900">The Art of Perfection</h4>
+                <p className="text-gray-700 leading-relaxed mt-2">
+                  Each leaf is handpicked — the delicate “two leaves and a bud.” The tea is then withered, rolled, fermented, and fired
+                  with precision to preserve its aroma and character. This devotion to craft makes Ceylon Tea one of the few remaining
+                  hand-harvested teas in the modern world.
+                </p>
+
+                <ul className="list-disc list-inside text-gray-700 mt-4 space-y-1">
+                  <li>Bright golden liquor</li>
+                  <li>Fresh, lively aroma</li>
+                  <li>Brisk, clean taste that lingers with clarity</li>
+                </ul>
+
+                <p className="text-gray-700 mt-4">
+                  These qualities have made Ceylon Tea a global standard of excellence. Today, Sri Lanka remains one of the world’s top
+                  tea exporters. The Lion Logo of Ceylon Tea guarantees 100% pure Ceylon origin — a mark of integrity, authenticity, and pride.
+                </p>
+
+                <p className="text-gray-700 mt-4">
+                  Beyond commerce, tea is a way of life — a rhythm of hills, harvests, and human hands. From sunrise plucking to the last
+                  evening cup, Ceylon Tea continues to symbolize warmth, hospitality, and heritage — a timeless taste born of Sri Lankan soil and soul.
+                </p>
+
+                <div className="mt-6 p-6 bg-amber-50 rounded-lg">
+                  <p className="text-gray-900 font-serif text-lg">Since 1977, we've been crafting the finest Ceylon Tea, building bridges between tradition and innovation, and earning the trust of global markets.</p>
+                </div>
+              </div>
 
               {/* Expertise Stats */}
               <div className="grid grid-cols-2 gap-6 pt-8">
