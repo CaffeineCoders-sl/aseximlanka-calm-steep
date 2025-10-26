@@ -14,7 +14,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import FloatingLeaves from "@/components/FloatingLeaves";
+// FloatingLeaves removed — decorative leaves have been removed per request
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,7 +95,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <FloatingLeaves />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}

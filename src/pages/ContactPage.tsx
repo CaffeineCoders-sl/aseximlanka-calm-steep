@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import FloatingLeaves from "@/components/FloatingLeaves";
+// FloatingLeaves removed — decorative leaves have been removed per request
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,7 +91,6 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <FloatingLeaves />
       {/* Hero Section */}
       <section className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-amber-950">
         <div className="absolute inset-0 opacity-20">
