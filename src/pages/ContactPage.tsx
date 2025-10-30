@@ -48,26 +48,22 @@ const ContactPage = () => {
       icon: MapPin,
       title: "Visit Us",
       details: [
-        "Colombo, Sri Lanka",
-        "Export Processing Zone",
-        "Tea Trading District",
+        "A S Exim Lanka (Pvt) Ltd",
+        "No 998/22, 1/1 Gunawardana Mawatha",
+        "Ethullkotte, Sri Lanka",
       ],
       color: "from-red-500 to-red-600",
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+94 11 XXX XXXX", "+94 77 XXX XXXX", "Mon-Sat: 9AM - 6PM"],
+      details: ["Dinesh Saluwadana: +94715524956", "Mon-Sat: 9AM - 6PM"],
       color: "from-green-500 to-green-600",
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: [
-        "info@aseximlanka.com",
-        "exports@aseximlanka.com",
-        "sales@aseximlanka.com",
-      ],
+      details: ["info@aseximlanka.com"],
       color: "from-blue-500 to-blue-600",
     },
     {
@@ -82,12 +78,7 @@ const ContactPage = () => {
     },
   ];
 
-  const departments = [
-    { name: "Sales & Exports", email: "sales@aseximlanka.com" },
-    { name: "Custom Blends", email: "blends@aseximlanka.com" },
-    { name: "Quality Assurance", email: "quality@aseximlanka.com" },
-    { name: "General Inquiries", email: "info@aseximlanka.com" },
-  ];
+  // Department contacts removed per request (see project maintainer notes)
 
   return (
     <div className="min-h-screen bg-white">
@@ -280,25 +271,7 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              {/* Department Contacts */}
-              <div className="bg-gradient-to-br from-emerald-50 to-amber-50 p-8 rounded-2xl border border-emerald-100">
-                <h4 className="font-serif text-xl text-gray-900 mb-4">
-                  Department Contacts
-                </h4>
-                <div className="space-y-3">
-                  {departments.map((dept, index) => (
-                    <div key={index} className="flex justify-between items-center text-sm">
-                      <span className="text-gray-700 font-medium">{dept.name}:</span>
-                      <a
-                        href={`mailto:${dept.email}`}
-                        className="text-amber-600 hover:text-amber-700 transition-colors"
-                      >
-                        {dept.email}
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              {/* Department Contacts removed per request - consolidated contact methods above */}
 
               {/* B2B Notice */}
               <div className="bg-gradient-to-br from-gray-900 to-emerald-900 p-8 rounded-2xl text-white">

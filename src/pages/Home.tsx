@@ -126,7 +126,8 @@ const Home = () => {
             {/* Premium Badge */}
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md border border-amber-500/30 rounded-full">
               <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
-              <span className="text-amber-400 text-sm tracking-[0.3em] uppercase font-medium">
+              <br />
+              <span style={{ marginTop: "10px", textShadow: "0 1px 3px rgba(0, 0, 0, 0.3)" }} className="text-amber-400 text-sm tracking-[0.3em] uppercase font-medium">
                 Est. 1977 • Premium Ceylon Tea Exporters
               </span>
             </div>

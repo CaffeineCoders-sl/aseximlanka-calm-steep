@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
@@ -85,15 +85,21 @@ const Footer = () => {
               <li className="flex items-start space-x-2">
                 <Phone className="w-4 h-4 mt-1 flex-shrink-0 text-amber-400" />
                 <div className="text-white/70">
-                  <div>+94 11 XXX XXXX</div>
-                  <div>+94 77 XXX XXXX</div>
+                  <div>Dinesh Saluwadana: +94715524956</div>
+                </div>
+              </li>
+              <li className="flex items-start space-x-2">
+                <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-amber-400" />
+                <div className="text-white/70">
+                  <div>A S Exim Lanka (Pvt) Ltd</div>
+                  <div>No 998/22, 1/1 Gunawardana Mawatha</div>
+                  <div>Ethullkotte, Sri Lanka</div>
                 </div>
               </li>
               <li className="flex items-start space-x-2">
                 <Mail className="w-4 h-4 mt-1 flex-shrink-0 text-amber-400" />
                 <div className="text-white/70">
                   <div>info@aseximlanka.com</div>
-                  <div>exports@aseximlanka.com</div>
                 </div>
               </li>
             </ul>

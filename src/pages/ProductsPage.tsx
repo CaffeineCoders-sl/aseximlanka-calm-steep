@@ -28,7 +28,7 @@ const ProductsPage = () => {
     {
       name: "Premium Black Tea",
       description: "Rich, full-bodied Ceylon black tea with a distinctive character that captivates the senses",
-      image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&q=80",
+      image: "/image2.jpeg",
       grades: ["Orange Pekoe", "PEKOE", "BOP", "FBOP", "BOPF"],
       features: ["High grown estate", "Rich malty flavor", "Perfect for blends", "Global favorite"],
       bgColor: "from-orange-50 to-amber-50",
@@ -37,7 +37,7 @@ const ProductsPage = () => {
     {
       name: "Ceylon Green Tea",
       description: "Delicate and refreshing green tea, packed with natural antioxidants and health benefits",
-      image: "https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=800&q=80",
+      image: "/image2.jpeg",
       grades: ["Sencha", "Gunpowder", "Young Hyson", "Chunmee"],
       features: ["Light & refreshing", "High antioxidants", "Naturally processed", "Health-conscious choice"],
       bgColor: "from-green-50 to-emerald-50",
@@ -46,7 +46,7 @@ const ProductsPage = () => {
     {
       name: "White Tea",
       description: "Rare and exquisite white tea, representing the pinnacle of tea craftsmanship",
-      image: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=800&q=80",
+      image: "/image3.jpeg",
       grades: ["Silver Needle", "White Peony", "Ceylon White"],
       features: ["Minimally processed", "Delicate flavor", "Premium quality", "Luxury segment"],
       bgColor: "from-gray-50 to-slate-50",
@@ -55,7 +55,7 @@ const ProductsPage = () => {
     {
       name: "Specialty Blends",
       description: "Custom-crafted blends meticulously tailored to your specific market needs and preferences",
-      image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80",
+      image: "/image4.jpeg",
       grades: ["Custom Blends", "Flavored Teas", "Herbal Infusions", "Private Label"],
       features: ["Bespoke solutions", "Market-specific", "Expert blending", "Your brand, our quality"],
       bgColor: "from-purple-50 to-pink-50",
@@ -97,6 +97,23 @@ const ProductsPage = () => {
     "GMP Certified",
     "Organic Certified",
     "Rainforest Alliance",
+  ];
+
+  // Milestones and Collections (matching component)
+  const milestones = [
+    { year: 2005, title: "Foundations of Trade", text: "A S Exim Lanka (Pvt) Ltd began as a family trading house in Sri Lanka, exporting authentic Ceylon tea and spices to regional buyers." },
+    { year: 2010, title: "Expanding Horizons", text: "Established supplier networks across Nuwara Eliya, Uva, and Dimbula and expanded into premium spices." },
+    { year: 2015, title: "The Art of Blending", text: "Invested in modern blending and packing to curate unique flavour profiles." },
+  ];
+
+  const collections = [
+    {
+      section: "Premium Caddy Collection",
+      items: [
+        { name: "Exim’s Gold Reserve", image: "/image1.jpeg" },
+        { name: "Exim’s Emerald Green", image: "/image2.jpeg" },
+      ],
+    },
   ];
 
   return (
@@ -164,9 +181,9 @@ const ProductsPage = () => {
                 key={index}
                 className="group text-center hover:-translate-y-2 transition-all duration-300"
               >
-                <div className={`w-24 h-24 mx-auto mb-6 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl`}>
-                  <feature.icon className="w-12 h-12 text-white" />
-                </div>
+                <div className={`w-24 h-24 mx-auto mb-6 bg-white rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl border border-gray-100`}>
+                    <feature.icon className="w-12 h-12 text-black" />
+                  </div>
                 <h3 className="text-xl font-serif text-gray-900 mb-3">
                   {feature.title}
                 </h3>
@@ -192,28 +209,28 @@ const ProductsPage = () => {
               >
                 {/* Image */}
                 <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <div className="relative group">
-                    <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="relative group flex justify-center px-4">
+                    {/* Card wrapper to give breathing room and consistent shape */}
+                    <div className="w-full max-w-[480px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-white p-4">
                       <img
                         src={tea.image}
                         alt={tea.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 rounded-xl"
                       />
                     </div>
-                    <div className={`absolute -bottom-8 ${index % 2 === 0 ? '-right-8' : '-left-8'} w-64 h-64 bg-gradient-to-br ${tea.bgColor} rounded-3xl -z-10`} />
+                    <div className={`absolute -bottom-8 ${index % 2 === 0 ? '-right-8' : '-left-8'} w-48 h-48 bg-gradient-to-br ${tea.bgColor} rounded-3xl -z-10`} />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className={`space-y-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                   <div>
-                    <h2 className={`text-4xl md:text-5xl font-serif text-gray-900 mb-4 ${tea.accentColor}`}>
+                    <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black mb-3`}>
                       {tea.name}
                     </h2>
-                    <div className={`w-24 h-1.5 bg-gradient-to-r ${tea.bgColor}`} />
+                    <div className={`w-20 h-1 rounded-full bg-amber-100/60 mb-4`} />
                   </div>
-
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                  <p className="text-base md:text-lg text-gray-600 max-w-prose leading-relaxed">
                     {tea.description}
                   </p>
 
@@ -221,7 +238,9 @@ const ProductsPage = () => {
                   <div className="grid grid-cols-2 gap-4">
                     {tea.features.map((feature, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <Check className={`w-5 h-5 ${tea.accentColor} flex-shrink-0 mt-0.5`} />
+                        <div className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-50">
+                          <Check className={`w-4 h-4 text-black`} />
+                        </div>
                         <span className="text-gray-600 text-sm">{feature}</span>
                       </div>
                     ))}
@@ -236,7 +255,7 @@ const ProductsPage = () => {
                       {tea.grades.map((grade, i) => (
                         <span
                           key={i}
-                          className={`px-4 py-2 bg-gradient-to-r ${tea.bgColor} ${tea.accentColor} text-sm font-medium rounded-full shadow-sm hover:shadow-md transition-shadow`}
+                          className={`px-4 py-2 bg-amber-50 text-black text-sm font-medium rounded-full shadow-sm border border-amber-100`}
                         >
                           {grade}
                         </span>

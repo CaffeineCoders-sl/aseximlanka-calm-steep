@@ -27,17 +27,21 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["Colombo, Sri Lanka", "Export Processing Zone"],
+      details: [
+        "A S Exim Lanka (Pvt) Ltd",
+        "No 998/22, 1/1 Gunawardana Mawatha",
+        "Ethullkotte, Sri Lanka",
+      ],
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+94 11 XXX XXXX", "+94 77 XXX XXXX"],
+      details: ["Dinesh Saluwadana: +94715524956"],
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@aseximlanka.com", "exports@aseximlanka.com"],
+      details: ["info@aseximlanka.com"],
     },
     {
       icon: Clock,
