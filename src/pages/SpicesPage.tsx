@@ -29,42 +29,42 @@ const SpicesPage = () => {
       latin: "Cinnamomum Zeylanicum",
       description: "Golden, sweet, and delicate in flavor — the world's finest true cinnamon.",
       origin: "Matale, Kegalle",
-      image: "/image1.jpeg",
+      image: "/spices/image1.jpeg",
       features: ["True Cinnamon", "Sweet & Delicate", "Premium Grade", "Hand-rolled"],
     },
     {
       name: "Black Pepper",
       description: "Rich, bold aroma and sharp heat, naturally sun-dried.",
       origin: "Kandy, Kurunegala",
-      image: "/image2.jpeg",
+      image: "/spices/image2.jpeg",
       features: ["Bold Aroma", "Sun-dried", "High Piperine", "Premium Quality"],
     },
     {
       name: "Cloves",
       description: "Full-bodied aroma and high oil content; handpicked for purity.",
       origin: "Matara, Galle",
-      image: "/image3.jpeg",
+      image: "/spices/image3.jpeg",
       features: ["High Oil Content", "Handpicked", "Pure Origin", "Rich Aroma"],
     },
     {
       name: "Cardamom",
       description: "High-elevation variety with deep fragrance and vibrant color.",
       origin: "Uda Pussellawa",
-      image: "/image4.jpeg",
+      image: "/spices/image1.jpeg",
       features: ["High Elevation", "Deep Fragrance", "Vibrant Color", "Premium Grade"],
     },
     {
       name: "Nutmeg & Mace",
       description: "Sweet, warm flavor with vibrant natural oils.",
       origin: "Kandy, Matale",
-      image: "/image5.jpeg",
+      image: "/spices/image2.jpeg",
       features: ["Natural Oils", "Warm Flavor", "Dual Spice", "Premium Quality"],
     },
     {
       name: "Turmeric & Ginger",
       description: "Purely grown, sun-cured roots — ideal for both culinary and wellness use.",
       origin: "Dambulla, Monaragala",
-      image: "/image6.jpeg",
+      image: "/spices/image3.jpeg",
       features: ["Wellness Grade", "Sun-cured", "Pure Roots", "Organic Option"],
     },
   ];
@@ -119,12 +119,11 @@ const SpicesPage = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative mt-16 py-32 md:py-48 overflow-hidden bg-gradient-to-br from-amber-950 via-amber-900 to-emerald-950">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-30">
           <div
             className="absolute inset-0 bg-cover bg-center bg-fixed"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1596040033229-a0b55c6f2e7e?w=1920&q=80')",
+              backgroundImage: "url('/spices/image1.jpeg')",
             }}
           />
         </div>
@@ -217,17 +216,16 @@ const SpicesPage = () => {
       </section>
 
       {/* Heritage Section */}
+      {/* Heritage Section */}
       <section className="py-32 bg-gradient-to-br from-emerald-950 via-emerald-900 to-amber-950 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-20">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1596040033229-a0b55c6f2e7e?w=1920&q=80')",
+              backgroundImage: "url('/spices/image2.jpeg')",
             }}
           />
         </div>
-
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-12">
             <div>

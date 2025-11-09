@@ -93,12 +93,11 @@ const WellnessPage = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative mt-16 py-32 md:py-48 overflow-hidden bg-gradient-to-br from-emerald-950 via-teal-900 to-cyan-950">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-30">
           <div
             className="absolute inset-0 bg-cover bg-center bg-fixed"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1540206395-68808572332f?w=1920&q=80')",
+              backgroundImage: "url('/welness/image1.PNG')",
             }}
           />
         </div>
@@ -217,12 +216,11 @@ const WellnessPage = () => {
 
       {/* Kadahapola Ayurvedic Section */}
       <section className="py-32 bg-gradient-to-br from-emerald-950 via-teal-900 to-emerald-950 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-20">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=80')",
+              backgroundImage: "url('/welness/image2.PNG')",
             }}
           />
         </div>
