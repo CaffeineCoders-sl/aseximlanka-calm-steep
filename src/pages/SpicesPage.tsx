@@ -123,7 +123,7 @@ const SpicesPage = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-fixed"
             style={{
-              backgroundImage: "url('/spices/image1.jpeg')",
+              backgroundImage: "url('/spices/image2.jpeg')",
             }}
           />
         </div>
