@@ -72,24 +72,24 @@ const Home = () => {
 
   const features = [
     {
-      icon: Award,
-      title: "40+ Years Excellence",
-      description: "Established legacy since 1977",
+      icon: Leaf,
+      title: "Ceylon Tea Excellence",
+      description: "Premium single-origin teas from seven legendary regions",
     },
     {
       icon: Globe,
-      title: "Global Presence",
-      description: "Exporting to discerning markets worldwide",
+      title: "Authentic Spices",
+      description: "True Ceylon cinnamon, pepper, and artisan spice blends",
     },
     {
-      icon: Leaf,
-      title: "Premium Quality",
-      description: "Finest Ceylon Tea from Sri Lankan highlands",
+      icon: Award,
+      title: "Wellness Tourism",
+      description: "Ayurvedic retreats at Eden Harvest Village",
     },
     {
       icon: Shield,
-      title: "ISO Certified",
-      description: "International quality standards",
+      title: "ISO & HACCP Certified",
+      description: "Global quality standards across all operations",
     },
   ];
 
@@ -124,84 +124,83 @@ const Home = () => {
         <div ref={heroRef} className="relative z-20 container mx-auto px-6 text-center">
           <div className="max-w-5xl mx-auto space-y-10">
             {/* Premium Badge */}
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md border border-amber-500/30 rounded-full">
-              <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
-              <br />
-              <span style={{ marginTop: "10px", textShadow: "0 1px 3px rgba(0, 0, 0, 0.3)" }} className="text-amber-400 text-sm tracking-[0.3em] uppercase font-medium">
-                Est. 1977 • Premium Ceylon Tea Exporters
+            <div className="inline-flex items-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-xl border border-amber-400/40 rounded-full shadow-2xl">
+              <div className="w-2.5 h-2.5 bg-amber-400 rounded-full animate-pulse shadow-lg shadow-amber-400/50" />
+              <span className="text-amber-300 text-xs md:text-sm tracking-[0.25em] uppercase font-semibold">
+                Est. 1977 • Ceylon's Finest Exports
               </span>
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif text-white leading-none tracking-tight">
-              Excellence in
-              <span className="block mt-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">
-                Every Leaf
+            <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-white leading-[1.1] tracking-tight">
+              Tradition Perfected.
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200 font-serif italic">
+                Excellence Delivered.
               </span>
             </h1>
 
             {/* Tagline */}
-            <p className="text-2xl md:text-3xl text-white/90 font-light tracking-wide">
-              Where Quality Meets Global Respect
+            <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-light tracking-wide max-w-4xl mx-auto">
+              Ceylon Tea • Authentic Spices • Wellness Tourism
             </p>
 
             {/* Description */}
-            <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light">
-              A. S. Exim Lanka stands as a beacon of excellence in the Ceylon Tea industry,
-              delivering unparalleled quality to the world's most discerning markets.
+            <p className="text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light">
+              A. S. Exim Lanka represents the pinnacle of Sri Lankan heritage — 
+              from mist-covered tea estates to aromatic spice gardens and transformative wellness experiences.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-12">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center pt-16">
               <Button
                 size="lg"
                 onClick={() => navigate("/products")}
-                className="group relative bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white px-16 py-9 text-xl font-bold rounded-full shadow-2xl shadow-amber-900/60 transition-all duration-300 hover:scale-110 hover:shadow-amber-900/80 cursor-pointer"
+                className="group relative bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-400 hover:via-amber-500 hover:to-amber-400 text-white px-14 py-8 text-lg font-semibold rounded-full shadow-2xl shadow-amber-900/50 transition-all duration-500 hover:scale-105 hover:shadow-amber-500/60 cursor-pointer border border-amber-400/30"
               >
-                View Products
-                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                Explore Our Divisions
+                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 size="lg"
                 onClick={() => navigate("/about")}
-                className="bg-white/95 text-emerald-900 hover:bg-white px-16 py-9 text-xl font-bold rounded-full shadow-2xl shadow-white/30 transition-all duration-300 hover:scale-110 cursor-pointer border-2 border-white"
+                className="group bg-white/10 backdrop-blur-md text-white hover:bg-white hover:text-emerald-950 px-14 py-8 text-lg font-semibold rounded-full shadow-2xl border-2 border-white/40 hover:border-white transition-all duration-500 hover:scale-105 cursor-pointer"
               >
-                Our Heritage
+                Our Story
               </Button>
             </div>
 
             {/* Stats Bar */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-20 max-w-4xl mx-auto">
-              <div className="text-center group">
-                <div className="text-5xl md:text-6xl font-serif text-amber-400 mb-3 group-hover:scale-110 transition-transform">
-                  40+
+            <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-10 pt-24 max-w-5xl mx-auto">
+              <div className="text-center group cursor-default">
+                <div className="text-5xl md:text-6xl lg:text-7xl font-light text-amber-300 mb-4 group-hover:scale-110 transition-transform duration-500">
+                  47
                 </div>
-                <div className="text-sm text-white/70 uppercase tracking-wider">
-                  Years of Excellence
-                </div>
-              </div>
-              <div className="text-center group">
-                <div className="text-5xl md:text-6xl font-serif text-amber-400 mb-3 group-hover:scale-110 transition-transform">
-                  150+
-                </div>
-                <div className="text-sm text-white/70 uppercase tracking-wider">
-                  Expert Professionals
+                <div className="text-xs md:text-sm text-white/60 uppercase tracking-[0.2em] font-medium">
+                  Years Heritage
                 </div>
               </div>
-              <div className="text-center group">
-                <div className="text-5xl md:text-6xl font-serif text-amber-400 mb-3 group-hover:scale-110 transition-transform">
-                  100%
+              <div className="text-center group cursor-default">
+                <div className="text-5xl md:text-6xl lg:text-7xl font-light text-amber-300 mb-4 group-hover:scale-110 transition-transform duration-500">
+                  50+
                 </div>
-                <div className="text-sm text-white/70 uppercase tracking-wider">
-                  Quality Assurance
+                <div className="text-xs md:text-sm text-white/60 uppercase tracking-[0.2em] font-medium">
+                  Global Markets
                 </div>
               </div>
-              <div className="text-center group">
-                <div className="text-5xl md:text-6xl font-serif text-amber-400 mb-3 group-hover:scale-110 transition-transform">
-                  Global
+              <div className="text-center group cursor-default">
+                <div className="text-5xl md:text-6xl lg:text-7xl font-light text-amber-300 mb-4 group-hover:scale-110 transition-transform duration-500">
+                  3
                 </div>
-                <div className="text-sm text-white/70 uppercase tracking-wider">
-                  Market Reach
+                <div className="text-xs md:text-sm text-white/60 uppercase tracking-[0.2em] font-medium">
+                  Elite Divisions
+                </div>
+              </div>
+              <div className="text-center group cursor-default">
+                <div className="text-5xl md:text-6xl lg:text-7xl font-light text-amber-300 mb-4 group-hover:scale-110 transition-transform duration-500">
+                  ISO
+                </div>
+                <div className="text-xs md:text-sm text-white/60 uppercase tracking-[0.2em] font-medium">
+                  Certified Quality
                 </div>
               </div>
             </div>
@@ -217,42 +216,44 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-32 bg-white relative overflow-hidden">
+      <section className="py-32 md:py-40 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
         {/* Decorative Background */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute top-0 left-0 w-full h-full" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #d4af37 1px, transparent 0)`
+            backgroundImage: `radial-gradient(circle at 2px 2px, #d4af37 1.5px, transparent 0)`,
+            backgroundSize: '48px 48px'
           }} />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-block">
-              <p className="text-amber-600 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-                Our Distinction
-              </p>
-            </div>
-            <h2 className="text-5xl md:text-6xl font-serif text-gray-900 mb-6">
-              Why Choose Us
+          <div className="text-center mb-24">
+            <p className="text-amber-600 text-xs md:text-sm tracking-[0.25em] uppercase mb-6 font-semibold">
+              Three Pillars of Excellence
+            </p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-8 max-w-3xl mx-auto leading-tight">
+              Heritage Meets Innovation
             </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-transparent via-amber-600 to-transparent mx-auto" />
+            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto" />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-7xl mx-auto">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-white to-gray-50 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-amber-200 hover:-translate-y-3"
+                className="group bg-white p-10 lg:p-12 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-700 border border-gray-100 hover:border-amber-200/60 hover:-translate-y-2 relative overflow-hidden"
               >
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-amber-100 to-amber-50 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-amber-200">
-                  <feature.icon className="w-10 h-10 text-amber-600" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-50 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="w-16 h-16 mx-auto mb-8 bg-gradient-to-br from-amber-100 via-amber-50 to-white rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 shadow-md group-hover:shadow-amber-200/50">
+                    <feature.icon className="w-8 h-8 text-amber-600" />
+                  </div>
+                  <h3 className="text-xl font-serif text-gray-900 mb-4 text-center leading-snug">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-center text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-serif text-gray-900 mb-3 text-center">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 text-center text-sm leading-relaxed">
-                  {feature.description}
-                </p>
               </div>
             ))}
           </div>
@@ -260,23 +261,23 @@ const Home = () => {
       </section>
 
       {/* Trust & Certifications Section */}
-      <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-emerald-50">
+      <section className="py-28 bg-gradient-to-br from-slate-50 via-white to-amber-50/30">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-amber-600 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-              Trusted Globally
+          <div className="text-center mb-20">
+            <p className="text-amber-600 text-xs md:text-sm tracking-[0.25em] uppercase mb-6 font-semibold">
+              Global Standards
             </p>
-            <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6">
-              Industry-Leading Certifications
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-8">
+              Certified Excellence
             </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-transparent via-amber-600 to-transparent mx-auto" />
+            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto" />
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
-            {["ISO 22000:2018", "HACCP Certified", "Ceylon Tea Export", "GMP Certified", "Organic Certified", "Rainforest Alliance"].map((cert, i) => (
-              <div key={i} className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-amber-100 hover:border-amber-300 text-center">
-                <Award className="w-8 h-8 text-amber-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                <p className="text-sm font-medium text-gray-900">{cert}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {["ISO 22000:2018", "HACCP Certified", "Ceylon Tea Board", "GMP Certified", "Organic Certified", "Rainforest Alliance"].map((cert, i) => (
+              <div key={i} className="group bg-white/80 backdrop-blur-sm p-6 lg:p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-amber-300/50 text-center hover:-translate-y-1">
+                <Award className="w-8 h-8 lg:w-10 lg:h-10 text-amber-600 mx-auto mb-4 group-hover:scale-110 transition-transform duration-500" />
+                <p className="text-xs lg:text-sm font-medium text-gray-800 leading-tight">{cert}</p>
               </div>
             ))}
           </div>
@@ -323,101 +324,68 @@ const Home = () => {
       </section>
 
       {/* Excellence & Achievement Section */}
-      <section className="py-48 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
+      <section className="py-40 md:py-48 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #d4af37 0.5px, transparent 0.5px)`,
-            backgroundSize: '50px 50px'
+            backgroundImage: `radial-gradient(circle at 1px 1px, #d4af37 1px, transparent 1px)`,
+            backgroundSize: '60px 60px'
           }} />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-24">
-              <p className="text-amber-500 text-sm tracking-[0.3em] uppercase mb-6 font-light">
-                Our Distinction
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-28">
+              <p className="text-amber-400/80 text-xs md:text-sm tracking-[0.3em] uppercase mb-8 font-light">
+                A Legacy of Trust
               </p>
-              <h2 className="text-6xl md:text-8xl font-serif text-white mb-8 font-light tracking-tight">
-                Excellence & Legacy
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-10 tracking-tight leading-tight">
+                Four Decades of
+                <span className="block text-amber-300 italic font-serif mt-2">Uncompromising Quality</span>
               </h2>
-              <div className="w-40 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto" />
+              <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto" />
             </div>
 
-            <div className="grid md:grid-cols-4 gap-12 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-24">
               {[
-                { number: "50+", label: "Countries Served" },
-                { number: "47", label: "Years of Excellence" },
-                { number: "200+", label: "Premium Clients" },
-                { number: "99.8%", label: "Quality Assurance" },
+                { number: "50+", label: "Export Markets" },
+                { number: "47", label: "Years Excellence" },
+                { number: "200+", label: "Global Partners" },
+                { number: "99.9%", label: "Quality Rating" },
               ].map((item, i) => (
-                <div key={i} className="text-center group">
-                  <div className="mb-4">
-                    <div className="text-6xl md:text-7xl font-serif text-amber-400 font-light">
+                <div key={i} className="text-center group cursor-default">
+                  <div className="mb-6">
+                    <div className="text-5xl md:text-6xl lg:text-7xl font-light text-amber-300 transition-all duration-700 group-hover:scale-105">
                       {item.number}
                     </div>
                   </div>
-                  <div className="h-1 w-12 bg-gradient-to-r from-amber-500 to-amber-600 mx-auto mb-4 group-hover:w-16 transition-all duration-300" />
-                  <p className="text-white/70 uppercase text-sm tracking-widest font-light">
+                  <div className="h-px w-16 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-5 group-hover:w-20 transition-all duration-500" />
+                  <p className="text-white/50 uppercase text-xs tracking-[0.2em] font-light">
                     {item.label}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="border-l-2 border-amber-500 pl-8 py-4">
-                <h3 className="text-2xl font-serif text-white mb-4 font-light">
-                  Certified Quality
+            <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
+              <div className="border-l-2 border-amber-400/40 pl-8 py-6 hover:border-amber-400 transition-colors duration-500">
+                <h3 className="text-2xl lg:text-3xl font-light text-white mb-5">
+                  Ethical Sourcing
                 </h3>
-                <p className="text-white/60 leading-relaxed font-light">
-                  ISO 22000:2018, HACCP Certified, GMP Standards. Every batch meets the highest international quality benchmarks with rigorous testing protocols.
+                <p className="text-white/50 leading-relaxed font-light text-sm lg:text-base">
+                  Direct partnerships with smallholder farmers across Sri Lanka, ensuring fair trade, 
+                  sustainable practices, and full traceability from estate to export.
                 </p>
               </div>
-              <div className="border-l-2 border-amber-500 pl-8 py-4">
-                <h3 className="text-2xl font-serif text-white mb-4 font-light">
-                  Sustainable Excellence
+              <div className="border-l-2 border-amber-400/40 pl-8 py-6 hover:border-amber-400 transition-colors duration-500">
+                <h3 className="text-2xl lg:text-3xl font-light text-white mb-5">
+                  Innovation & Heritage
                 </h3>
-                <p className="text-white/60 leading-relaxed font-light">
-                  Rainforest Alliance Certified. Committed to environmental stewardship, ethical practices, and supporting local communities across Ceylon's tea estates.
+                <p className="text-white/50 leading-relaxed font-light text-sm lg:text-base">
+                  Blending centuries-old traditions with state-of-the-art processing, 
+                  packaging, and quality assurance — preserving authenticity while meeting global standards.
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <p className="text-amber-600 text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-              What Our Clients Say
-            </p>
-            <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6">
-              Trusted by Industry Leaders
-            </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-transparent via-amber-600 to-transparent mx-auto" />
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              { name: "Hassan Al-Mansouri", role: "CEO, Middle East Trading Co.", quote: "A. S. Exim Lanka has been our trusted partner for 15 years. Their consistency and premium quality are unmatched.", rating: 5 },
-              { name: "Eleanor Chen", role: "Head of Procurement, Global Beverages", quote: "Exceptional service, premium products, and true commitment to excellence. They set the standard in the industry.", rating: 5 },
-              { name: "James Robertson", role: "Founder, Fine Tea Imports Ltd", quote: "Outstanding reliability and the finest Ceylon tea available. Our customers consistently praise the quality.", rating: 5 },
-            ].map((testimonial, i) => (
-              <div key={i} className="group bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-amber-100 hover:border-amber-300">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, j) => (
-                    <Star key={j} className="w-5 h-5 text-amber-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
-                <div className="border-t border-amber-200 pt-4">
-                  <p className="font-serif text-gray-900 font-medium">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -464,7 +432,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-950 relative overflow-hidden">
+      <section className="py-32 md:py-40 bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-950 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -476,31 +444,31 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
-              Ready to Experience
-              <span className="block text-amber-400">Premium Ceylon Tea?</span>
+          <div className="max-w-4xl mx-auto text-center space-y-10">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight">
+              Partner with Ceylon's
+              <span className="block text-amber-300 italic font-serif mt-2">Finest Export House</span>
             </h2>
-            <p className="text-xl text-white/80 font-light">
-              Partner with us for exceptional quality, reliable service, and the finest
-              tea Sri Lanka has to offer.
+            <p className="text-lg md:text-xl text-white/70 font-light max-w-2xl mx-auto leading-relaxed">
+              Experience uncompromising quality, ethical sourcing, and global reliability 
+              across tea, spices, and wellness.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-10">
               <Button
                 size="lg"
                 onClick={() => navigate("/contact")}
-                className="bg-amber-600 hover:bg-amber-500 text-white px-10 py-7 text-lg font-medium rounded-full shadow-2xl hover:scale-105 transition-all duration-300"
+                className="group bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-400 hover:via-amber-500 hover:to-amber-400 text-white px-12 py-7 text-lg font-semibold rounded-full shadow-2xl hover:scale-105 transition-all duration-500 border border-amber-400/30"
               >
                 Get In Touch
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 onClick={() => navigate("/products")}
-                className="border-2 border-white/50 text-white hover:bg-white hover:text-emerald-900 px-10 py-7 text-lg font-medium rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                className="group border-2 border-white/30 text-white hover:bg-white hover:text-emerald-950 px-12 py-7 text-lg font-semibold rounded-full backdrop-blur-md transition-all duration-500 hover:scale-105"
               >
-                View Products
+                Explore Products
               </Button>
             </div>
           </div>
