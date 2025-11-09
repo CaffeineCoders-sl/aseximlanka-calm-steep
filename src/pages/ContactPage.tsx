@@ -49,8 +49,8 @@ const ContactPage = () => {
       title: "Visit Us",
       details: [
         "A S Exim Lanka (Pvt) Ltd",
-        "No 998/22, 1/1 Gunawardana Mawatha",
-        "Ethullkotte, Sri Lanka",
+        "1, 665/22, 1 Gunawardana Mawatha",
+        "Sri Jayawardenepura Kotte 10120, Sri Lanka",
       ],
       color: "from-red-500 to-red-600",
     },

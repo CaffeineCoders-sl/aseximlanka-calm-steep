@@ -92,8 +92,8 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-amber-400" />
                 <div className="text-white/70">
                   <div>A S Exim Lanka (Pvt) Ltd</div>
-                  <div>No 998/22, 1/1 Gunawardana Mawatha</div>
-                  <div>Ethullkotte, Sri Lanka</div>
+                  <div>1, 665/22, 1 Gunawardana Mawatha</div>
+                  <div>Sri Jayawardenepura Kotte 10120, Sri Lanka</div>
                 </div>
               </li>
               <li className="flex items-start space-x-2">
