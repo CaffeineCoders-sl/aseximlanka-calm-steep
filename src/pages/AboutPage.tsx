@@ -66,12 +66,11 @@ const AboutPage = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-32 md:py-40 overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-amber-950">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-30">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1563299796-17596ed6b017?w=1920&q=80')",
+              backgroundImage: "url('/About/image.png')",
             }}
           />
         </div>
@@ -109,31 +108,24 @@ const AboutPage = () => {
                 <div className="space-y-4">
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                     <img
-                      src="https://images.unsplash.com/photo-1587080266227-677cc2a4e76e?w=600&q=80"
-                      alt="Tea Estate"
+                      src="/About/image.png"
+                      alt="A S Exim Lanka Heritage"
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                     />
                   </div>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                     <img
-                      src="https://images.unsplash.com/photo-1597318112430-12cbb5c0c2cc?w=600&q=80"
-                      alt="Tea Processing"
+                      src="/About/image2.jpeg"
+                      alt="Ceylon Tea Excellence"
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                     />
                   </div>
                 </div>
                 <div className="space-y-4 pt-8">
-                  <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                    <img
-                      src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&q=80"
-                      alt="Tea Cup"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                     <img
-                      src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80"
-                      alt="Tea Plantation"
+                      src="/About/image3.jpeg"
+                      alt="Our Company Story"
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                     />
                   </div>
