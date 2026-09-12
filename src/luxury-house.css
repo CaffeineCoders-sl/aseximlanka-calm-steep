@@ -1,0 +1,643 @@
+/* Final luxury-house art direction layer.
+   Keeps the brand image-free where possible and uses typography, material, geometry and motion. */
+
+:root {
+  --house-green: #08271e;
+  --house-green-2: #0d3327;
+  --house-ink: #14372b;
+  --house-ivory: #fffaf0;
+  --house-paper: #f7f0e3;
+  --house-sand: #efe2cc;
+  --house-cinnamon: #8d5c3f;
+  --house-gold: #d8bd7a;
+  --house-gold-bright: #e5c982;
+  --house-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.house-surface {
+  position: relative;
+  isolation: isolate;
+}
+
+.house-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image:
+    linear-gradient(rgba(20,55,43,0.7) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,55,43,0.7) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(to bottom, black, transparent 68%);
+}
+
+.house-overline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+}
+
+.house-overline::before {
+  content: "";
+  width: 2.2rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.72;
+}
+
+.house-number {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(4rem, 8vw, 8.5rem);
+  font-weight: 400;
+  line-height: 0.75;
+  letter-spacing: -0.04em;
+}
+
+/* Homepage: tasting / service language */
+.house-tasting-section {
+  position: relative;
+  overflow: hidden;
+  background: #f0e5d3;
+}
+
+.house-tasting-section::before {
+  content: "";
+  position: absolute;
+  width: 42rem;
+  height: 42rem;
+  right: -16rem;
+  top: -16rem;
+  border-radius: 50%;
+  border: 1px solid rgba(141,92,63,0.13);
+  box-shadow:
+    0 0 0 5rem rgba(141,92,63,0.025),
+    0 0 0 10rem rgba(141,92,63,0.018);
+  pointer-events: none;
+}
+
+.tasting-card {
+  position: relative;
+  min-height: 19rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(20,55,43,0.15);
+  padding: 2rem 0;
+  transition: transform 700ms var(--house-ease), border-color 700ms ease;
+}
+
+.tasting-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(141,92,63,0.5);
+}
+
+.tasting-card::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 2.1rem;
+  width: clamp(4.5rem, 7vw, 7rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(141,92,63,0.25);
+  box-shadow: inset 0 0 0 0.85rem rgba(141,92,63,0.035);
+  transition: transform 900ms var(--house-ease), box-shadow 900ms ease;
+}
+
+.tasting-card:hover::after {
+  transform: rotate(22deg) scale(1.08);
+  box-shadow: inset 0 0 0 1.5rem rgba(141,92,63,0.055);
+}
+
+.tasting-scale {
+  height: 2px;
+  margin-top: 2rem;
+  background: rgba(20,55,43,0.12);
+  overflow: hidden;
+}
+
+.tasting-scale > span {
+  display: block;
+  height: 100%;
+  width: var(--scale, 70%);
+  background: linear-gradient(90deg, var(--house-cinnamon), var(--house-gold));
+  transform-origin: left;
+  transition: transform 900ms var(--house-ease);
+}
+
+.tasting-card:hover .tasting-scale > span {
+  transform: scaleX(1.05);
+}
+
+/* Homepage journal preview */
+.house-journal-preview {
+  position: relative;
+  overflow: hidden;
+  background: var(--house-ivory);
+}
+
+.house-journal-preview::after {
+  content: "JOURNAL";
+  position: absolute;
+  right: -0.02em;
+  bottom: -0.17em;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(7rem, 19vw, 19rem);
+  line-height: 1;
+  color: rgba(20,55,43,0.025);
+  pointer-events: none;
+}
+
+.journal-preview-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.8rem 0;
+  border-top: 1px solid rgba(20,55,43,0.14);
+  text-align: left;
+  transition: padding-left 600ms var(--house-ease), border-color 600ms ease;
+}
+
+.journal-preview-row:last-child {
+  border-bottom: 1px solid rgba(20,55,43,0.14);
+}
+
+.journal-preview-row:hover {
+  padding-left: 0.8rem;
+  border-color: rgba(141,92,63,0.42);
+}
+
+.journal-preview-row .journal-arrow {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(141,92,63,0.28);
+  color: var(--house-cinnamon);
+  transition: background 500ms ease, color 500ms ease, transform 500ms var(--house-ease);
+}
+
+.journal-preview-row:hover .journal-arrow {
+  background: var(--house-ink);
+  color: var(--house-ivory);
+  transform: translate(2px, -2px);
+}
+
+/* Shared page art */
+.house-art-stage {
+  position: relative;
+  min-height: 34rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 28%, rgba(229,201,130,0.13), transparent 27%),
+    linear-gradient(145deg, #0a3025, #061f18 64%, #102e23);
+}
+
+.house-art-stage::before,
+.house-art-stage::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(229,201,130,0.21);
+}
+
+.house-art-stage::before {
+  width: 38rem;
+  height: 38rem;
+  right: -11rem;
+  top: -9rem;
+}
+
+.house-art-stage::after {
+  width: 21rem;
+  height: 21rem;
+  right: 5rem;
+  top: 6rem;
+  border-style: dashed;
+  animation: houseOrbit 34s linear infinite;
+}
+
+.house-art-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(255,250,240,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,250,240,0.15) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(90deg, transparent, black 48%, black);
+}
+
+.house-art-leaf {
+  position: absolute;
+  width: 7rem;
+  height: 14rem;
+  right: 18%;
+  top: 27%;
+  border: 1px solid rgba(229,201,130,0.46);
+  border-radius: 100% 0 100% 0;
+  transform: rotate(32deg);
+  animation: leafBreathe 7s ease-in-out infinite alternate;
+}
+
+.house-art-leaf::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  bottom: 8%;
+  width: 1px;
+  background: rgba(229,201,130,0.33);
+  transform: rotate(-15deg);
+  transform-origin: center;
+}
+
+.house-coordinate {
+  position: absolute;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+  color: rgba(255,250,240,0.34);
+}
+
+.house-coordinate.top {
+  top: 7rem;
+  right: 3rem;
+}
+
+.house-coordinate.bottom {
+  bottom: 3rem;
+  left: 3rem;
+}
+
+/* Heritage page */
+.heritage-dial {
+  position: absolute;
+  right: clamp(-8rem, 4vw, 4rem);
+  top: 50%;
+  width: min(44vw, 39rem);
+  aspect-ratio: 1;
+  transform: translateY(-43%);
+  border-radius: 50%;
+  border: 1px solid rgba(229,201,130,0.24);
+}
+
+.heritage-dial::before,
+.heritage-dial::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 12%;
+  border: 1px dashed rgba(229,201,130,0.22);
+}
+
+.heritage-dial::after {
+  inset: 31%;
+  border-style: solid;
+  box-shadow: 0 0 0 2.6rem rgba(229,201,130,0.025);
+}
+
+.heritage-year {
+  position: absolute;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  color: rgba(255,250,240,0.9);
+}
+
+.heritage-year.y1977 { left: -4%; top: 18%; }
+.heritage-year.y1998 { right: -4%; top: 46%; }
+.heritage-year.y2024 { left: 17%; bottom: -1%; color: var(--house-gold-bright); }
+
+.heritage-panel {
+  position: relative;
+  min-height: 31rem;
+  overflow: hidden;
+  border: 1px solid rgba(20,55,43,0.12);
+  background: linear-gradient(145deg, #f3e8d5, #fffaf0);
+}
+
+.heritage-panel.dark {
+  background: linear-gradient(145deg, #0e382b, #071f18);
+  border-color: rgba(229,201,130,0.18);
+}
+
+.heritage-panel .ring {
+  position: absolute;
+  width: 22rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(141,92,63,0.18);
+  top: -7rem;
+  right: -6rem;
+  box-shadow: 0 0 0 3.5rem rgba(141,92,63,0.025), 0 0 0 7rem rgba(141,92,63,0.018);
+}
+
+.heritage-panel.dark .ring {
+  border-color: rgba(229,201,130,0.19);
+  box-shadow: 0 0 0 3.5rem rgba(229,201,130,0.025), 0 0 0 7rem rgba(229,201,130,0.014);
+}
+
+.heritage-panel .year-mark {
+  position: absolute;
+  left: 2rem;
+  bottom: 1.5rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(6rem, 13vw, 11rem);
+  line-height: 0.72;
+  color: rgba(141,92,63,0.13);
+}
+
+.heritage-panel.dark .year-mark { color: rgba(229,201,130,0.14); }
+
+.heritage-panel .heritage-caption {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  max-width: 12rem;
+  font-size: 0.56rem;
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--house-cinnamon);
+}
+
+.heritage-panel.dark .heritage-caption { color: var(--house-gold-bright); }
+
+/* Spice art */
+.spice-hero-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 34%, rgba(216,189,122,0.13), transparent 22%),
+    linear-gradient(132deg, #2c2118 0%, #1f1711 45%, #0b2b22 100%);
+}
+
+.spice-quill {
+  position: absolute;
+  right: 17%;
+  top: 20%;
+  width: 4.6rem;
+  height: 23rem;
+  border: 1px solid rgba(229,201,130,0.43);
+  border-radius: 3rem;
+  transform: rotate(38deg);
+  box-shadow:
+    inset 0 0 0 0.75rem rgba(229,201,130,0.025),
+    6rem 3rem 0 -1px rgba(0,0,0,0),
+    6rem 3rem 0 0 rgba(229,201,130,0.16);
+  animation: spiceFloat 9s ease-in-out infinite alternate;
+}
+
+.spice-bead {
+  position: absolute;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  border: 1px solid rgba(229,201,130,0.45);
+  background: rgba(229,201,130,0.05);
+}
+
+.spice-bead.b1 { right: 38%; top: 24%; }
+.spice-bead.b2 { right: 43%; top: 36%; width: 0.8rem; height: 0.8rem; }
+.spice-bead.b3 { right: 35%; top: 47%; width: 1.45rem; height: 1.45rem; }
+.spice-bead.b4 { right: 47%; top: 57%; width: 0.95rem; height: 0.95rem; }
+
+.spice-specimen {
+  position: relative;
+  min-height: 20rem;
+  overflow: hidden;
+  background: linear-gradient(145deg, #2b2118, #102b22);
+  border: 1px solid rgba(229,201,130,0.16);
+}
+
+.spice-specimen::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(229,201,130,0.12);
+  transition: inset 700ms var(--house-ease), border-color 700ms ease;
+}
+
+.spice-specimen:hover::before {
+  inset: 0.7rem;
+  border-color: rgba(229,201,130,0.28);
+}
+
+.spice-specimen .specimen-letter {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 0.5rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(7rem, 13vw, 11rem);
+  line-height: 0.78;
+  color: rgba(229,201,130,0.11);
+}
+
+.spice-specimen .specimen-line {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  width: 1px;
+  height: 48%;
+  background: linear-gradient(to bottom, rgba(229,201,130,0.55), transparent);
+}
+
+.spice-specimen .specimen-dot {
+  position: absolute;
+  left: 1.52rem;
+  top: 1.7rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid rgba(229,201,130,0.52);
+}
+
+.cinnamon-study {
+  position: relative;
+  min-height: 36rem;
+  overflow: hidden;
+  border: 1px solid rgba(229,201,130,0.14);
+  background: linear-gradient(145deg, #332218, #19150f 60%, #0d2b22);
+}
+
+.cinnamon-study::before,
+.cinnamon-study::after {
+  content: "";
+  position: absolute;
+  width: 5rem;
+  height: 27rem;
+  border-radius: 3rem;
+  border: 1px solid rgba(229,201,130,0.38);
+  top: 3.5rem;
+  left: 38%;
+  transform: rotate(29deg);
+  box-shadow: inset 0 0 0 0.85rem rgba(229,201,130,0.025);
+}
+
+.cinnamon-study::after {
+  left: 56%;
+  top: 5.2rem;
+  transform: rotate(29deg) scale(0.82);
+  opacity: 0.62;
+}
+
+/* Wellness art */
+.wellness-hero-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 74% 26%, rgba(229,201,130,0.16), transparent 20%),
+    linear-gradient(152deg, #0a3125 0%, #0b3a2c 48%, #132b23 100%);
+}
+
+.wellness-sun {
+  position: absolute;
+  right: 13%;
+  top: 16%;
+  width: min(24vw, 18rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(229,201,130,0.38);
+  box-shadow:
+    0 0 0 3rem rgba(229,201,130,0.025),
+    0 0 0 6rem rgba(229,201,130,0.018),
+    0 0 90px rgba(229,201,130,0.08);
+  animation: sunPulse 8s ease-in-out infinite alternate;
+}
+
+.wellness-terrace {
+  position: absolute;
+  left: 44%;
+  right: -8%;
+  bottom: -8%;
+  height: 50%;
+  border-top: 1px solid rgba(229,201,130,0.2);
+  border-radius: 50% 0 0 0;
+  box-shadow:
+    0 -2.5rem 0 -2.45rem rgba(229,201,130,0.19),
+    0 -5rem 0 -4.95rem rgba(229,201,130,0.16),
+    0 -7.5rem 0 -7.45rem rgba(229,201,130,0.13),
+    0 -10rem 0 -9.95rem rgba(229,201,130,0.1);
+}
+
+.wellness-landscape {
+  position: relative;
+  min-height: 37rem;
+  overflow: hidden;
+  border: 1px solid rgba(229,201,130,0.14);
+  background: linear-gradient(160deg, #0d392b, #071f18);
+}
+
+.wellness-landscape .sun {
+  position: absolute;
+  width: 9rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(229,201,130,0.4);
+  right: 18%;
+  top: 13%;
+}
+
+.wellness-landscape .ridge {
+  position: absolute;
+  left: -12%;
+  right: -8%;
+  height: 18rem;
+  bottom: -7rem;
+  border-radius: 50% 50% 0 0;
+  border-top: 1px solid rgba(229,201,130,0.18);
+  box-shadow:
+    0 -3.5rem 0 -3.45rem rgba(229,201,130,0.15),
+    0 -7rem 0 -6.95rem rgba(229,201,130,0.12),
+    0 -10.5rem 0 -10.45rem rgba(229,201,130,0.09);
+}
+
+.wellness-landscape .waterline {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 18%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(229,201,130,0.46), transparent);
+}
+
+/* Footer / nav refinements */
+.house-footer-wordmark {
+  position: absolute;
+  left: 50%;
+  bottom: -0.24em;
+  transform: translateX(-50%);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(9rem, 24vw, 24rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: rgba(255,250,240,0.018);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.luxury-nav-shell::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 3%, rgba(229,201,130,0.32) 50%, transparent 97%);
+  transform: scaleX(0.92);
+  opacity: 0.7;
+}
+
+@keyframes houseOrbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes leafBreathe {
+  from { transform: rotate(30deg) translateY(0) scale(0.98); }
+  to { transform: rotate(34deg) translateY(-9px) scale(1.04); }
+}
+
+@keyframes spiceFloat {
+  from { transform: rotate(36deg) translate3d(0, 0, 0); }
+  to { transform: rotate(40deg) translate3d(-8px, -12px, 0); }
+}
+
+@keyframes sunPulse {
+  from { transform: scale(0.97); opacity: 0.76; }
+  to { transform: scale(1.04); opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .heritage-dial { width: 70vw; right: -26vw; opacity: 0.56; }
+  .journal-preview-row { grid-template-columns: 42px minmax(0,1fr) auto; }
+  .spice-quill { right: 12%; opacity: 0.58; }
+  .wellness-sun { right: -5%; width: 42vw; }
+}
+
+@media (max-width: 640px) {
+  .journal-preview-row { grid-template-columns: 36px minmax(0,1fr); }
+  .journal-preview-row .journal-arrow { display: none; }
+  .tasting-card { min-height: 15rem; }
+  .heritage-panel { min-height: 24rem; }
+  .house-art-stage { min-height: 27rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .house-art-stage::after,
+  .house-art-leaf,
+  .spice-quill,
+  .wellness-sun {
+    animation: none !important;
+  }
+}

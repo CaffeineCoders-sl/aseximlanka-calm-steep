@@ -8,6 +8,7 @@ const navItems = [
   { name: "Ceylon Tea", path: "/products" },
   { name: "Spices", path: "/spices" },
   { name: "Wellness", path: "/wellness" },
+  { name: "Journal", path: "/journal" },
 ];
 
 const Navbar = () => {
@@ -51,15 +52,15 @@ const Navbar = () => {
           <BrandMark inverted={!lightHeader} />
         </button>
 
-        <div className="hidden items-center gap-8 lg:flex">
-          <nav className="flex items-center gap-7" aria-label="Primary navigation">
+        <div className="hidden items-center gap-7 lg:flex">
+          <nav className="flex items-center gap-6" aria-label="Primary navigation">
             {navItems.map((item) => {
-              const isActive = location.pathname === item.path;
+              const isActive = location.pathname === item.path || (item.path === "/journal" && location.pathname.startsWith("/journal/"));
               return (
                 <button
                   key={item.path}
                   onClick={() => handleNavigate(item.path)}
-                  className={`group relative py-2 text-[0.64rem] font-semibold uppercase tracking-[0.205em] transition-colors duration-500 ${
+                  className={`group relative py-2 text-[0.62rem] font-semibold uppercase tracking-[0.195em] transition-colors duration-500 ${
                     lightHeader
                       ? isActive
                         ? "text-[#8d5c3f]"
@@ -109,7 +110,7 @@ const Navbar = () => {
 
       <div
         className={`overflow-hidden bg-[#fff9ed]/[0.98] backdrop-blur-2xl transition-all duration-500 lg:hidden ${
-          isMobileMenuOpen ? "max-h-[520px] border-t border-[#17382d]/10" : "max-h-0"
+          isMobileMenuOpen ? "max-h-[580px] border-t border-[#17382d]/10" : "max-h-0"
         }`}
       >
         <nav className="mx-auto max-w-[1440px] px-5 py-6 sm:px-8" aria-label="Mobile navigation">
