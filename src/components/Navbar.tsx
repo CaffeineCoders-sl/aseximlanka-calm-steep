@@ -39,7 +39,7 @@ const Navbar = () => {
       className={`luxury-nav-shell fixed inset-x-0 top-0 z-50 border-b ${
         lightHeader
           ? "border-[#143b2e]/10 bg-[#fff9ed]/[0.94] shadow-[0_12px_46px_rgba(9,38,29,0.075)] backdrop-blur-2xl"
-          : "border-white/15 bg-[#092d22]/[0.20] backdrop-blur-lg"
+          : "border-white/[0.18] bg-[#06281f]/[0.38] shadow-[0_10px_40px_rgba(2,20,15,0.12)] backdrop-blur-lg"
       }`}
     >
       <div className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
@@ -65,15 +65,15 @@ const Navbar = () => {
                         ? "text-[#8d5c3f]"
                         : "text-[#17382d] hover:text-[#8d5c3f]"
                       : isActive
-                        ? "text-[#e3c787]"
-                        : "text-white/82 hover:text-[#e3c787]"
+                        ? "text-[#e5c982]"
+                        : "text-[#fff9ed] hover:text-[#e5c982]"
                   }`}
                 >
                   {item.name}
                   <span
                     className={`absolute inset-x-0 -bottom-0.5 h-px origin-left transition-transform duration-500 ${
                       isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                    } ${lightHeader ? "bg-[#9f7747]" : "bg-[#e3c787]"}`}
+                    } ${lightHeader ? "bg-[#9f7747]" : "bg-[#e5c982]"}`}
                   />
                 </button>
               );
@@ -85,7 +85,7 @@ const Navbar = () => {
             className={`luxury-nav-cta group inline-flex items-center gap-2 border px-5 py-3 text-[0.62rem] font-semibold uppercase tracking-[0.19em] transition-all duration-500 ${
               lightHeader
                 ? "border-[#17382d]/25 text-[#17382d] hover:border-[#17382d] hover:bg-[#17382d] hover:text-[#fff9ed]"
-                : "border-white/40 text-white hover:border-[#e3c787] hover:bg-[#e3c787] hover:text-[#0b2d22]"
+                : "border-white/[0.48] bg-white/[0.04] text-[#fff9ed] hover:border-[#e5c982] hover:bg-[#e5c982] hover:text-[#0b2d22]"
             }`}
           >
             Source with us
@@ -97,7 +97,7 @@ const Navbar = () => {
           className={`grid h-11 w-11 place-items-center border transition-all duration-500 lg:hidden ${
             lightHeader
               ? "border-[#17382d]/18 text-[#17382d]"
-              : "border-white/30 text-white"
+              : "border-white/[0.34] text-[#fff9ed]"
           }`}
           onClick={() => setIsMobileMenuOpen((open) => !open)}
           aria-expanded={isMobileMenuOpen}

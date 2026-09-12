@@ -17,21 +17,24 @@ const collections = [
     title: "Single-origin Ceylon",
     description:
       "Distinctive teas selected to preserve the character of origin, elevation, season, and manufacture.",
-    image: "/image2.jpeg",
+    visualClass: "",
+    mark: "C",
   },
   {
     number: "02",
     title: "Signature & bespoke blends",
     description:
       "Balanced profiles developed for retail, hospitality, gifting, and market-specific preferences.",
-    image: "/image3.jpeg",
+    visualClass: "variant-two",
+    mark: "B",
   },
   {
     number: "03",
     title: "Private-label presentation",
     description:
       "Tea prepared as a complete brand experience across caddies, pouches, sachets, gift boxes, and bulk formats.",
-    image: "/image5.jpeg",
+    visualClass: "variant-three",
+    mark: "P",
   },
 ];
 
@@ -64,6 +67,25 @@ const atelierDetails = [
   { number: "III", label: "Buyer specification", detail: "Market · compliance · export" },
 ];
 
+const divisions = [
+  {
+    eyebrow: "Island spice house",
+    title: "Ceylon spices",
+    copy: "Cinnamon, pepper, cloves, cardamom, nutmeg, turmeric, and ginger prepared for international buyers.",
+    path: "/spices",
+    panelClass: "spice",
+    mark: "S",
+  },
+  {
+    eyebrow: "Eden Harvest",
+    title: "Wellness village",
+    copy: "A slower expression of Sri Lanka through gardens, nature, wellness, hospitality, and place.",
+    path: "/wellness",
+    panelClass: "wellness",
+    mark: "W",
+  },
+];
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -75,19 +97,15 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#f7f0e3] text-[#14372b]">
       <section className="hero-stage relative min-h-[100svh] overflow-hidden bg-[#092d22] text-[#fff9ed]">
-        <div className="absolute inset-0">
-          <img
-            data-hero-image
-            src="/image.png"
-            alt="Sri Lankan tea country"
-            className="h-full w-full scale-[1.015] object-cover object-center saturate-[0.78] contrast-[1.06]"
-            fetchPriority="high"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,31,23,0.98)_0%,rgba(7,39,29,0.87)_40%,rgba(7,39,29,0.30)_70%,rgba(7,39,29,0.62)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(225,194,124,0.16),transparent_27%)]" />
-          <div className="absolute inset-0 premium-grain opacity-[0.12]" />
-          <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#092d22]/88 to-transparent" />
+        <div className="origin-canvas" aria-hidden="true">
+          <div className="origin-grid" />
+          <div className="origin-orbit" />
+          <div className="origin-axis" />
+          <div className="origin-leaf leaf-one" />
+          <div className="origin-leaf leaf-two" />
+          <div className="origin-leaf leaf-three" />
           <div className="absolute inset-4 border border-white/[0.07] sm:inset-7" />
+          <div className="absolute inset-0 premium-grain opacity-[0.08]" />
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1440px] items-end px-5 pb-20 pt-32 sm:px-8 md:pb-24 lg:px-12 lg:pb-28">
@@ -110,7 +128,7 @@ const Home = () => {
               </h1>
 
               <div className="mt-8 grid max-w-3xl gap-7 md:grid-cols-[1fr_auto] md:items-end">
-                <p data-hero className="max-w-2xl text-[1rem] font-light leading-8 text-white/72 md:text-lg">
+                <p data-hero className="max-w-2xl text-[1rem] font-light leading-8 text-white/[0.74] md:text-lg">
                   An origin-led house for exceptional Ceylon tea, sourcing across Sri Lanka’s
                   seven tea-growing regions and preparing distinctive collections for retail,
                   hospitality, gifting, and private-label partners.
@@ -126,7 +144,7 @@ const Home = () => {
                   </button>
                   <button
                     onClick={() => go("/contact")}
-                    className="luxury-button group inline-flex items-center justify-between gap-6 border border-white/35 px-6 py-4 text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-white hover:border-[#e1c27c] hover:text-[#e1c27c]"
+                    className="luxury-button group inline-flex items-center justify-between gap-6 border border-white/[0.35] px-6 py-4 text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-white hover:border-[#e1c27c] hover:text-[#e1c27c]"
                   >
                     Source with us
                     <ArrowUpRight className="h-4 w-4 stroke-[1.5] transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -135,7 +153,7 @@ const Home = () => {
               </div>
             </div>
 
-            <aside data-hero className="border-t border-white/25 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+            <aside data-hero className="border-t border-white/[0.25] pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
               <p className="text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-[#e1c27c]">
                 The island in numbers
               </p>
@@ -145,9 +163,9 @@ const Home = () => {
                   ["3", "origin-led divisions"],
                   ["1", "Sri Lankan house"],
                 ].map(([value, label]) => (
-                  <div key={label} className="border-b border-white/14 pb-5 last:border-0">
+                  <div key={label} className="border-b border-white/[0.14] pb-5 last:border-0">
                     <span className="font-serif text-4xl leading-none text-[#fff9ed] md:text-5xl">{value}</span>
-                    <span className="mt-2 block max-w-[10rem] text-[0.58rem] font-semibold uppercase leading-5 tracking-[0.17em] text-white/52">
+                    <span className="mt-2 block max-w-[10rem] text-[0.58rem] font-semibold uppercase leading-5 tracking-[0.17em] text-white/[0.54]">
                       {label}
                     </span>
                   </div>
@@ -162,7 +180,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="border-b border-[#14372b]/12 bg-[#f7f0e3]">
+      <section className="border-b border-[#14372b]/[0.12] bg-[#f7f0e3]">
         <div className="mx-auto max-w-[1440px] px-5 py-7 sm:px-8 lg:px-12">
           <div className="flex gap-7 overflow-x-auto pb-2 scrollbar-none lg:grid lg:grid-cols-7 lg:gap-4 lg:overflow-visible">
             {teaRegions.map((region, index) => (
@@ -194,7 +212,7 @@ const Home = () => {
               <h2 className="max-w-5xl font-serif text-[clamp(3.2rem,6vw,6.6rem)] font-normal leading-[0.92] tracking-[-0.03em] text-[#14372b]">
                 An island measured in <span className="italic text-[#8d5c3f]">altitude, rain, season, and leaf.</span>
               </h2>
-              <div className="mt-10 grid gap-8 border-t border-[#14372b]/14 pt-8 md:grid-cols-2">
+              <div className="mt-10 grid gap-8 border-t border-[#14372b]/[0.14] pt-8 md:grid-cols-2">
                 <p className="text-base leading-8 text-[#5f6258]">
                   Ceylon tea is not one flavour. Sri Lanka’s elevations and climatic zones create a remarkable spectrum of cup character. Our role is to preserve that distinction while shaping it for contemporary markets.
                 </p>
@@ -219,7 +237,7 @@ const Home = () => {
             <button
               data-reveal
               onClick={() => go("/products")}
-              className="group inline-flex w-fit items-center gap-3 border-b border-[#8d5c3f]/55 pb-2 text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-[#8d5c3f]"
+              className="group inline-flex w-fit items-center gap-3 border-b border-[#8d5c3f]/[0.55] pb-2 text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-[#8d5c3f]"
             >
               View the tea house
               <ArrowUpRight className="h-4 w-4 stroke-[1.5] transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -234,29 +252,23 @@ const Home = () => {
                 key={collection.title}
                 onClick={() => go("/products")}
                 className={`luxury-card luxury-frame group relative overflow-hidden bg-[#0c3025] text-left ${
-                  index === 0
-                    ? "lg:col-span-7 lg:row-span-2"
-                    : "lg:col-span-5 lg:row-span-1"
+                  index === 0 ? "lg:col-span-7 lg:row-span-2" : "lg:col-span-5 lg:row-span-1"
                 }`}
               >
-                <img
-                  src={collection.image}
-                  alt={collection.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="luxury-image h-full min-h-[360px] w-full object-cover saturate-[0.80] contrast-[1.04] lg:min-h-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071f18]/95 via-[#071f18]/25 to-[#071f18]/4" />
+                <div className={`collection-visual ${collection.visualClass}`} aria-hidden="true">
+                  <span className="collection-mark">{collection.mark}</span>
+                </div>
+                <div className="absolute inset-0 z-[2] bg-gradient-to-t from-[#071f18]/[0.96] via-[#071f18]/[0.2] to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 z-[4] p-6 sm:p-8 lg:p-9">
                   <div className="mb-4 flex items-center gap-3 text-[0.58rem] font-semibold uppercase tracking-[0.2em] text-[#e1c27c]">
                     <span>{collection.number}</span>
-                    <span className="h-px w-8 bg-[#e1c27c]/70" />
+                    <span className="h-px w-8 bg-[#e1c27c]/[0.7]" />
                     <span>Collection</span>
                   </div>
                   <h3 className={`font-serif font-normal leading-none text-[#fff9ed] ${index === 0 ? "text-4xl md:text-6xl" : "text-3xl md:text-4xl"}`}>
                     {collection.title}
                   </h3>
-                  <p className="mt-4 max-w-xl text-sm leading-6 text-white/64">{collection.description}</p>
+                  <p className="mt-4 max-w-xl text-sm leading-6 text-white/[0.66]">{collection.description}</p>
                 </div>
               </button>
             ))}
@@ -276,7 +288,7 @@ const Home = () => {
               </h2>
             </div>
 
-            <div className="divide-y divide-white/12 border-t border-white/12">
+            <div className="divide-y divide-white/[0.12] border-t border-white/[0.12]">
               {process.map((item, index) => (
                 <div
                   data-reveal="right"
@@ -286,7 +298,7 @@ const Home = () => {
                 >
                   <span className="text-[0.58rem] font-semibold uppercase tracking-[0.2em] text-[#e1c27c]">{item.number}</span>
                   <h3 className="font-serif text-2xl font-normal text-[#fff9ed] md:text-3xl">{item.title}</h3>
-                  <p className="max-w-xl text-sm leading-7 text-white/60">{item.text}</p>
+                  <p className="max-w-xl text-sm leading-7 text-white/[0.62]">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -296,17 +308,12 @@ const Home = () => {
 
       <section className="bg-[#efe2cc] py-24 md:py-32 lg:py-36">
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-20 lg:px-12">
-          <div data-reveal="left" className="relative">
-            <div className="absolute -left-5 -top-5 hidden h-full w-full border border-[#8d5c3f]/22 md:block" />
-            <div className="luxury-frame relative overflow-hidden bg-[#14372b] p-2 shadow-[0_30px_90px_rgba(20,55,43,0.13)]">
-              <img
-                data-parallax
-                src="/image5.jpeg"
-                alt="Ceylon tea presentation and packaging"
-                loading="lazy"
-                decoding="async"
-                className="aspect-[5/4] w-full scale-[1.08] object-cover saturate-[0.8] contrast-[1.04]"
-              />
+          <div data-reveal="left" className="atelier-stage" aria-label="Abstract premium private-label presentation">
+            <div className="atelier-line one" aria-hidden="true" />
+            <div className="atelier-line two" aria-hidden="true" />
+            <div className="atelier-tin" aria-hidden="true" />
+            <div className="absolute bottom-7 left-7 z-[3] text-[0.56rem] font-semibold uppercase tracking-[0.24em] text-[#8d5c3f]">
+              Designed around your market · your cup · your presentation
             </div>
           </div>
 
@@ -319,11 +326,11 @@ const Home = () => {
               We treat private label as more than putting a logo on a pack. Tea profile, format, presentation, gifting, and export requirements should feel like one coherent product experience.
             </p>
 
-            <div className="mt-10 border-y border-[#14372b]/16">
-              {atelierDetails.map((item, index) => (
+            <div className="mt-10 border-y border-[#14372b]/[0.16]">
+              {atelierDetails.map((item) => (
                 <div
                   key={item.number}
-                  className="grid grid-cols-[54px_1fr] gap-4 border-b border-[#14372b]/12 py-4 transition-all duration-500 last:border-0 hover:translate-x-1 hover:border-[#8d5c3f]/30 sm:grid-cols-[54px_0.8fr_1.2fr] sm:items-center"
+                  className="grid grid-cols-[54px_1fr] gap-4 border-b border-[#14372b]/[0.12] py-4 transition-all duration-500 last:border-0 hover:translate-x-1 hover:border-[#8d5c3f]/[0.3] sm:grid-cols-[54px_0.8fr_1.2fr] sm:items-center"
                 >
                   <span className="font-serif text-lg italic text-[#8d5c3f]">{item.number}</span>
                   <p className="text-[0.61rem] font-semibold uppercase tracking-[0.18em] text-[#14372b]">{item.label}</p>
@@ -354,22 +361,7 @@ const Home = () => {
             </div>
 
             <div className="grid gap-5 md:grid-cols-2">
-              {[
-                {
-                  eyebrow: "Island spice house",
-                  title: "Ceylon spices",
-                  copy: "Cinnamon, pepper, cloves, cardamom, nutmeg, turmeric, and ginger prepared for international buyers.",
-                  image: "/spices/image1.jpeg",
-                  path: "/spices",
-                },
-                {
-                  eyebrow: "Eden Harvest",
-                  title: "Wellness village",
-                  copy: "A slower expression of Sri Lanka through gardens, nature, wellness, hospitality, and place.",
-                  image: "/welness/image1.PNG",
-                  path: "/wellness",
-                },
-              ].map((division, index) => (
+              {divisions.map((division, index) => (
                 <button
                   data-reveal="scale"
                   data-reveal-delay={(index * 0.08).toFixed(2)}
@@ -377,22 +369,16 @@ const Home = () => {
                   onClick={() => go(division.path)}
                   className="group text-left"
                 >
-                  <div className="luxury-card luxury-frame relative overflow-hidden bg-[#14372b] p-1.5">
-                    <img
-                      src={division.image}
-                      alt={division.title}
-                      loading="lazy"
-                      decoding="async"
-                      className="luxury-image aspect-[4/3] w-full object-cover saturate-[0.78] contrast-[1.04]"
-                    />
+                  <div className={`division-panel ${division.panelClass}`} aria-hidden="true">
+                    <span className="division-label">{division.mark}</span>
                   </div>
-                  <div className="flex items-start justify-between gap-5 border-b border-[#14372b]/14 py-5">
+                  <div className="flex items-start justify-between gap-5 border-b border-[#14372b]/[0.14] py-5">
                     <div>
                       <p className="text-[0.57rem] font-semibold uppercase tracking-[0.2em] text-[#8d5c3f]">{division.eyebrow}</p>
                       <h3 className="mt-2 font-serif text-3xl font-normal text-[#14372b]">{division.title}</h3>
                       <p className="mt-3 max-w-lg text-sm leading-6 text-[#66695f]">{division.copy}</p>
                     </div>
-                    <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center border border-[#8d5c3f]/35 text-[#8d5c3f] transition-all duration-500 group-hover:-translate-y-1 group-hover:bg-[#14372b] group-hover:text-[#fff9ed]">
+                    <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center border border-[#8d5c3f]/[0.35] text-[#8d5c3f] transition-all duration-500 group-hover:-translate-y-1 group-hover:bg-[#14372b] group-hover:text-[#fff9ed]">
                       <ArrowUpRight className="h-4 w-4 stroke-[1.5]" />
                     </span>
                   </div>
@@ -404,17 +390,8 @@ const Home = () => {
       </section>
 
       <section className="relative min-h-[68svh] overflow-hidden bg-[#08271e] text-[#fff9ed]">
-        <img
-          data-parallax
-          src="/image6.jpeg"
-          alt="Ceylon tea estate landscape"
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full scale-[1.09] object-cover saturate-[0.76] contrast-[1.06]"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,31,23,0.96),rgba(5,31,23,0.72)_58%,rgba(5,31,23,0.36))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_40%,rgba(225,194,124,0.12),transparent_28%)]" />
-        <div className="absolute inset-0 premium-grain opacity-[0.1]" />
+        <div className="closing-field" aria-hidden="true" />
+        <div className="absolute inset-0 premium-grain opacity-[0.08]" />
         <div className="absolute inset-5 border border-white/[0.08] sm:inset-8" />
 
         <div className="relative z-10 mx-auto flex min-h-[68svh] max-w-[1440px] items-center px-5 py-24 sm:px-8 lg:px-12">
@@ -426,7 +403,7 @@ const Home = () => {
             <h2 className="mt-7 font-serif text-[clamp(3.7rem,7vw,7.5rem)] font-normal leading-[0.84] tracking-[-0.035em] text-[#fff9ed]">
               Source Ceylon <span className="italic text-[#e5c982]">differently.</span>
             </h2>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-white/68">
+            <p className="mt-7 max-w-2xl text-base leading-8 text-white/[0.7]">
               Tell us the cup profile, market, format, or collection you are trying to create. We will start the conversation from there.
             </p>
             <button

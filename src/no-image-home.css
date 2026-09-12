@@ -1,0 +1,419 @@
+/* Image-free art direction for the premium home experience. */
+
+.origin-canvas {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 76% 24%, rgba(223, 190, 115, 0.14), transparent 22%),
+    radial-gradient(circle at 58% 72%, rgba(255, 248, 228, 0.035), transparent 27%),
+    linear-gradient(135deg, #071f18 0%, #0b3125 48%, #102c22 100%);
+}
+
+.origin-canvas::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background-image:
+    repeating-radial-gradient(ellipse at 67% 42%, transparent 0 42px, rgba(225, 194, 124, 0.08) 43px 44px, transparent 45px 72px),
+    repeating-radial-gradient(ellipse at 24% 82%, transparent 0 34px, rgba(255, 250, 240, 0.04) 35px 36px, transparent 37px 62px);
+  opacity: 0.7;
+  transform: rotate(-9deg) scale(1.05);
+  animation: contourDrift 24s ease-in-out infinite alternate;
+}
+
+.origin-canvas::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(3, 22, 16, 0.92) 0%, rgba(5, 30, 22, 0.72) 42%, rgba(8, 36, 27, 0.18) 72%, rgba(5, 27, 20, 0.5) 100%),
+    linear-gradient(180deg, transparent 45%, rgba(4, 24, 18, 0.52) 100%);
+}
+
+.origin-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 84px 84px;
+  mask-image: linear-gradient(to right, transparent 0%, black 54%, black 100%);
+}
+
+.origin-orbit {
+  position: absolute;
+  right: 7vw;
+  top: 18vh;
+  width: min(41vw, 620px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(225, 194, 124, 0.22);
+  border-radius: 50%;
+  animation: orbitSpin 34s linear infinite;
+}
+
+.origin-orbit::before,
+.origin-orbit::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(225, 194, 124, 0.15);
+  border-radius: 50%;
+}
+
+.origin-orbit::before { inset: 12%; }
+.origin-orbit::after { inset: 31%; }
+
+.origin-axis {
+  position: absolute;
+  right: calc(7vw + min(20.5vw, 310px));
+  top: 13vh;
+  width: 1px;
+  height: 68vh;
+  background: linear-gradient(to bottom, transparent, rgba(225,194,124,0.26), transparent);
+  opacity: 0.9;
+}
+
+.origin-leaf {
+  position: absolute;
+  width: 54px;
+  height: 88px;
+  border: 1px solid rgba(225, 194, 124, 0.38);
+  border-radius: 100% 0 100% 0;
+  transform-origin: 50% 100%;
+  animation: leafFloat 9s ease-in-out infinite alternate;
+}
+
+.origin-leaf::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 1px;
+  height: 62px;
+  background: rgba(225, 194, 124, 0.28);
+  transform: rotate(26deg);
+  transform-origin: bottom;
+}
+
+.origin-leaf.leaf-one { right: 16%; top: 29%; transform: rotate(19deg); }
+.origin-leaf.leaf-two { right: 31%; top: 52%; width: 38px; height: 64px; opacity: 0.6; animation-delay: -3s; }
+.origin-leaf.leaf-three { right: 8%; top: 67%; width: 31px; height: 54px; opacity: 0.4; animation-delay: -5s; }
+
+.collection-visual {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(145deg, #0a2d22 0%, #123f31 100%);
+}
+
+.collection-visual::before {
+  content: "";
+  position: absolute;
+  width: 72%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(225, 194, 124, 0.28);
+  border-radius: 50%;
+  right: -18%;
+  top: -24%;
+  box-shadow:
+    0 0 0 42px rgba(225,194,124,0.035),
+    0 0 0 84px rgba(225,194,124,0.024),
+    0 0 0 126px rgba(225,194,124,0.014);
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.collection-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(118deg, transparent 20%, rgba(255,250,240,0.07) 48%, transparent 72%);
+  transform: translateX(-110%);
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .collection-visual::before { transform: scale(1.08) rotate(8deg); }
+.group:hover .collection-visual::after { transform: translateX(110%); }
+
+.collection-visual.variant-two {
+  background:
+    radial-gradient(circle at 28% 34%, rgba(216,189,122,0.16), transparent 19%),
+    linear-gradient(150deg, #472b1f 0%, #81513a 100%);
+}
+
+.collection-visual.variant-two::before {
+  border-radius: 100% 0 100% 0;
+  width: 46%;
+  right: 8%;
+  top: 16%;
+  transform: rotate(16deg);
+}
+
+.collection-visual.variant-three {
+  background:
+    linear-gradient(135deg, rgba(216,189,122,0.08), transparent 44%),
+    linear-gradient(145deg, #132f27 0%, #1f4c3b 100%);
+}
+
+.collection-visual.variant-three::before {
+  width: 42%;
+  right: 11%;
+  top: 15%;
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.collection-mark {
+  position: absolute;
+  right: 7%;
+  bottom: 8%;
+  z-index: 2;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(6rem, 13vw, 13rem);
+  font-weight: 400;
+  line-height: 0.8;
+  color: rgba(255, 250, 240, 0.045);
+  letter-spacing: -0.07em;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), color 1.2s ease;
+}
+
+.group:hover .collection-mark {
+  transform: translate3d(-8px, -8px, 0);
+  color: rgba(255, 250, 240, 0.075);
+}
+
+.atelier-stage {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid rgba(20,55,43,0.16);
+  background:
+    radial-gradient(circle at 68% 28%, rgba(141,92,63,0.18), transparent 20%),
+    linear-gradient(145deg, #e8d8bd, #f6eddc 60%, #ddc8a8);
+}
+
+.atelier-stage::before {
+  content: "";
+  position: absolute;
+  inset: 7%;
+  border: 1px solid rgba(20,55,43,0.15);
+}
+
+.atelier-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(20,55,43,0.12) 0.6px, transparent 0.7px);
+  background-size: 6px 6px;
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+}
+
+.atelier-tin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: min(48%, 280px);
+  aspect-ratio: 0.72;
+  border: 1px solid rgba(225,194,124,0.5);
+  background: linear-gradient(145deg, #0a2b20, #123a2c 72%, #0a261d);
+  transform: translate(-50%, -48%) rotate(-2deg);
+  box-shadow: 0 42px 90px rgba(20,55,43,0.2);
+  animation: tinFloat 7s ease-in-out infinite alternate;
+}
+
+.atelier-tin::before {
+  content: "A.S.\A CEYLON\A ORIGIN HOUSE";
+  white-space: pre;
+  position: absolute;
+  inset: 21% 14%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(225,194,124,0.42);
+  color: #e2c47e;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1rem, 2vw, 1.45rem);
+  line-height: 1.55;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.atelier-tin::after {
+  content: "";
+  position: absolute;
+  left: -24%;
+  right: -24%;
+  bottom: -15%;
+  height: 24%;
+  background: radial-gradient(ellipse, rgba(20,55,43,0.22), transparent 68%);
+  filter: blur(8px);
+  transform: rotate(2deg);
+}
+
+.atelier-line {
+  position: absolute;
+  z-index: 1;
+  height: 1px;
+  background: rgba(141,92,63,0.28);
+  transform-origin: left;
+  animation: lineBreathe 5.8s ease-in-out infinite alternate;
+}
+
+.atelier-line.one { left: 8%; right: 48%; top: 24%; }
+.atelier-line.two { left: 57%; right: 7%; bottom: 22%; animation-delay: -2s; }
+
+.division-panel {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  border: 1px solid rgba(20,55,43,0.14);
+  background: #14372b;
+  isolation: isolate;
+}
+
+.division-panel::before,
+.division-panel::after {
+  content: "";
+  position: absolute;
+  transition: transform 1.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease;
+}
+
+.division-panel.spice::before {
+  width: 72%;
+  aspect-ratio: 1;
+  left: -16%;
+  top: -20%;
+  border-radius: 50%;
+  border: 1px solid rgba(225,194,124,0.26);
+  box-shadow: 0 0 0 38px rgba(225,194,124,0.035), 0 0 0 76px rgba(225,194,124,0.018);
+}
+
+.division-panel.spice::after {
+  right: 12%;
+  bottom: 14%;
+  width: 34%;
+  aspect-ratio: 1;
+  background: repeating-conic-gradient(from 10deg, rgba(225,194,124,0.24) 0 7deg, transparent 7deg 28deg);
+  border-radius: 50%;
+  opacity: 0.55;
+  animation: orbitSpin 24s linear infinite;
+}
+
+.division-panel.wellness {
+  background: linear-gradient(145deg, #183d31, #274f40 55%, #18372d);
+}
+
+.division-panel.wellness::before {
+  inset: 12%;
+  border: 1px solid rgba(225,194,124,0.22);
+  border-radius: 50% 50% 3% 50%;
+  transform: rotate(24deg);
+}
+
+.division-panel.wellness::after {
+  inset: 23%;
+  border: 1px solid rgba(255,250,240,0.17);
+  border-radius: 50% 50% 3% 50%;
+  transform: rotate(42deg);
+  animation: softPulse 6s ease-in-out infinite alternate;
+}
+
+.group:hover .division-panel::before { transform: scale(1.06) rotate(31deg); }
+
+.division-label {
+  position: absolute;
+  left: 8%;
+  bottom: 7%;
+  z-index: 3;
+  color: rgba(255,250,240,0.08);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(5rem, 10vw, 9rem);
+  line-height: 0.8;
+}
+
+.closing-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 74% 48%, rgba(225,194,124,0.12), transparent 22%),
+    linear-gradient(120deg, #061f17, #0b3124 55%, #102b22);
+}
+
+.closing-field::before {
+  content: "";
+  position: absolute;
+  width: min(72vw, 920px);
+  aspect-ratio: 1;
+  right: -16%;
+  top: 50%;
+  border: 1px solid rgba(225,194,124,0.18);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 80px rgba(225,194,124,0.025), 0 0 0 160px rgba(225,194,124,0.015);
+  animation: closingOrbit 16s ease-in-out infinite alternate;
+}
+
+.closing-field::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: repeating-radial-gradient(ellipse at 76% 52%, transparent 0 48px, rgba(255,250,240,0.045) 49px 50px, transparent 51px 78px);
+  transform: rotate(7deg);
+  animation: contourDrift 25s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes contourDrift {
+  from { transform: rotate(-9deg) scale(1.03) translate3d(0,0,0); }
+  to { transform: rotate(-5deg) scale(1.08) translate3d(-2%,2%,0); }
+}
+
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+
+@keyframes leafFloat {
+  from { margin-top: -7px; margin-right: -3px; }
+  to { margin-top: 10px; margin-right: 9px; }
+}
+
+@keyframes tinFloat {
+  from { transform: translate(-50%, -50%) rotate(-3deg); }
+  to { transform: translate(-50%, -46%) rotate(1deg); }
+}
+
+@keyframes lineBreathe {
+  from { transform: scaleX(0.54); opacity: 0.35; }
+  to { transform: scaleX(1); opacity: 0.9; }
+}
+
+@keyframes softPulse {
+  from { opacity: 0.35; transform: rotate(42deg) scale(0.94); }
+  to { opacity: 0.8; transform: rotate(50deg) scale(1.05); }
+}
+
+@keyframes closingOrbit {
+  from { transform: translateY(-50%) scale(0.96); }
+  to { transform: translateY(-50%) scale(1.05); }
+}
+
+@media (max-width: 1023px) {
+  .origin-orbit { right: -24vw; width: 78vw; top: 18vh; opacity: 0.55; }
+  .origin-axis { display: none; }
+  .origin-leaf { opacity: 0.35; }
+  .atelier-stage { min-height: 430px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .origin-canvas::before,
+  .origin-orbit,
+  .origin-leaf,
+  .atelier-tin,
+  .atelier-line,
+  .division-panel.spice::after,
+  .division-panel.wellness::after,
+  .closing-field::before,
+  .closing-field::after {
+    animation: none !important;
+  }
+}
