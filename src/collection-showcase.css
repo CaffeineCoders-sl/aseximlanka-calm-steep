@@ -1,0 +1,85 @@
+/* Photographic Ceylon collection showcase — based on the approved premium art direction. */
+
+.collection-visual {
+  inset: -1px;
+  background: url("/collection-single-origin.webp") center / cover no-repeat;
+  transform: scale(1.018);
+  transition: transform 1.35s cubic-bezier(0.22, 1, 0.36, 1), filter 900ms ease;
+}
+
+.collection-visual.variant-two {
+  background: url("/collection-bespoke-blends.webp") center / cover no-repeat;
+}
+
+.collection-visual.variant-three {
+  background: url("/collection-private-label.webp") center / cover no-repeat;
+}
+
+.collection-visual::before,
+.collection-visual::after,
+.collection-mark {
+  display: none !important;
+}
+
+/* The approved artwork already contains the collection typography and copy. */
+.collection-visual + div,
+.collection-visual + div + div {
+  display: none !important;
+}
+
+.luxury-card:has(> .collection-visual) {
+  min-height: 0;
+  background: #08271e;
+}
+
+.luxury-card:has(> .collection-visual).luxury-frame::before,
+.luxury-card:has(> .collection-visual).luxury-frame::after {
+  opacity: 0;
+}
+
+.luxury-card:has(> .collection-visual):hover .collection-visual {
+  transform: scale(1.055);
+  filter: saturate(1.025) contrast(1.015);
+}
+
+@media (max-width: 1023px) {
+  .luxury-card:has(> .collection-visual:not(.variant-two):not(.variant-three)) {
+    aspect-ratio: 480 / 394;
+  }
+
+  .luxury-card:has(> .collection-visual.variant-two) {
+    aspect-ratio: 520 / 276;
+  }
+
+  .luxury-card:has(> .collection-visual.variant-three) {
+    aspect-ratio: 520 / 271;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid:has(> .luxury-card > .collection-visual) {
+    grid-template-columns: minmax(0, 1.28fr) minmax(0, 1fr) !important;
+    grid-template-rows: repeat(2, clamp(200px, 20.5vw, 300px)) !important;
+  }
+
+  .luxury-card:has(> .collection-visual:not(.variant-two):not(.variant-three)) {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+  }
+
+  .luxury-card:has(> .collection-visual.variant-two) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  .luxury-card:has(> .collection-visual.variant-three) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collection-visual {
+    transition: none !important;
+  }
+}
