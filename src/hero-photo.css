@@ -1,0 +1,96 @@
+/* Photographic hero art direction — keeps the existing semantic/live hero copy and CTAs. */
+
+.hero-stage {
+  background: #061f18;
+  isolation: isolate;
+}
+
+.hero-stage .origin-canvas {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 20, 15, 0.99) 0%,
+      rgba(4, 25, 18, 0.97) 30%,
+      rgba(5, 29, 21, 0.9) 46%,
+      rgba(5, 30, 22, 0.64) 60%,
+      rgba(4, 24, 18, 0.24) 76%,
+      rgba(3, 20, 15, 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 16, 12, 0.22) 0%,
+      rgba(2, 16, 12, 0.03) 46%,
+      rgba(2, 16, 12, 0.5) 100%
+    ),
+    url("https://dosedaily.co/cdn/shop/articles/What_Are_Healthy_Drinks_That_Give_You_More_Energy.jpg?v=1737126650") center right / cover no-repeat;
+}
+
+.hero-stage .origin-canvas::before {
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 58%, rgba(224, 187, 100, 0.18), transparent 25%),
+    radial-gradient(circle at 74% 52%, transparent 0%, transparent 38%, rgba(2, 17, 12, 0.12) 72%, rgba(2, 17, 12, 0.42) 100%);
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.hero-stage .origin-canvas::after {
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 20, 15, 0.32) 0%, transparent 18%, transparent 70%, rgba(3, 20, 15, 0.48) 100%),
+    linear-gradient(90deg, rgba(3, 20, 15, 0.2) 0%, transparent 74%);
+}
+
+.hero-stage .origin-grid,
+.hero-stage .origin-orbit,
+.hero-stage .origin-axis,
+.hero-stage .origin-leaf {
+  display: none;
+}
+
+.hero-stage .hero-copy {
+  max-width: 880px;
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.18);
+}
+
+.hero-stage aside[data-hero] {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(180deg, rgba(4, 27, 20, 0.56), rgba(4, 27, 20, 0.34));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+}
+
+@media (min-width: 1024px) {
+  .hero-stage aside[data-hero] {
+    padding: 1.6rem 1.45rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-stage .origin-canvas {
+    background:
+      linear-gradient(180deg, rgba(3, 20, 15, 0.52) 0%, rgba(3, 20, 15, 0.78) 56%, rgba(3, 20, 15, 0.96) 100%),
+      linear-gradient(90deg, rgba(3, 20, 15, 0.68) 0%, rgba(3, 20, 15, 0.28) 100%),
+      url("https://dosedaily.co/cdn/shop/articles/What_Are_Healthy_Drinks_That_Give_You_More_Energy.jpg?v=1737126650") 68% center / cover no-repeat;
+  }
+
+  .hero-stage aside[data-hero] {
+    padding-top: 1.5rem;
+    background: rgba(4, 27, 20, 0.32);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-stage .origin-canvas {
+    background:
+      linear-gradient(180deg, rgba(3, 20, 15, 0.68) 0%, rgba(3, 20, 15, 0.86) 52%, rgba(3, 20, 15, 0.98) 100%),
+      url("https://dosedaily.co/cdn/shop/articles/What_Are_Healthy_Drinks_That_Give_You_More_Energy.jpg?v=1737126650") 62% center / cover no-repeat;
+  }
+
+  .hero-stage .hero-copy {
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.24);
+  }
+}
