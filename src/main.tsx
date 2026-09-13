@@ -6,5 +6,8 @@ import "./no-image-home.css";
 import "./ceylon-tea.css";
 import "./journal.css";
 import "./luxury-house.css";
+import "./hero-photo.css";
+import "./collection-showcase.css";
+import "./beyond-tea-showcase.css";
 
 createRoot(document.getElementById("root")!).render(<App />);
